@@ -27,3 +27,15 @@ def task_create(request):
         form = TaskForm()
         pass
     return render(request, "tasks/task_form.html", {"form": form})
+
+
+def task_update(request, pk):
+    task = Task.objects.get(pk=pk)
+    if request.method == "POST":
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect("tasks:task_list")
+    else:
+        form = TaskForm(instance=task)
+    return render(request, "tasks/task_form.html", {"form": form})
