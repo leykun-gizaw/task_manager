@@ -20,7 +20,9 @@ def task_create(request):
     if request.method == "POST":
         form = TaskForm(request.POST)
         if form.is_valid():
-            form.save()
+            task = form.save(commit=False)
+            task.created_by = request.user
+            task.save()
             return redirect("tasks:task_list")
         pass
     else:
