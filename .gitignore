@@ -32,9 +32,6 @@ Thumbs.db
 /static/
 /media/
 
-# Migrations
-*/migrations/*
-
 # Coverage reports
 htmlcov/
 .coverage

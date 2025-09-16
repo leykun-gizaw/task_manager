@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Task List</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <a href="{% url 'tasks:task_detail' task.pk %}"><strong>{{ task.title }}</strong></a>
+                {% if task.is_completed %}
+                    <span style="color: green;">(Completed)</span>
+                {% else %}
+                    <span style="color: red;">(Pending)</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

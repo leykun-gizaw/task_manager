@@ -1,0 +1,79 @@
+/* styles.css for Task Manager */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header {
+  background: #2d6cdf;
+  color: #fff;
+  padding: 1.5rem 0 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+main {
+  max-width: 800px;
+  margin: 2.5rem auto 2rem auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  padding: 2rem 2.5rem;
+  min-height: 400px;
+}
+
+footer {
+  text-align: center;
+  color: #888;
+  font-size: 1rem;
+  padding: 1.5rem 0 1rem 0;
+  background: #f0f0f0;
+  border-top: 1px solid #e0e0e0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 0.5rem;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+}
