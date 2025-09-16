@@ -39,3 +39,12 @@ def task_update(request, pk):
     else:
         form = TaskForm(instance=task)
     return render(request, "tasks/task_form.html", {"form": form})
+
+
+def task_delete(request, pk):
+    task = Task.objects.get(pk=pk)
+    # if the method is post delete the task if not redirect to tasks list
+    if request.method == "POST":
+        task.delete()
+        return redirect("tasks:task_list")
+    return render(request, "tasks/task_confirm_delete.html", {"task": task})
